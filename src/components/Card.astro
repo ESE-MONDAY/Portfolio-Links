@@ -3,17 +3,17 @@ interface Props {
 	title: string;
 	body: string;
 	href: string;
+	icon: string;
 }
 
-const { href, title, body } = Astro.props;
+const { href, title, body, icon } = Astro.props;
 ---
 
 <li class="link-card">
-	<img src="/icons8-twitter-48.svg" />
 	<a href={href} target="_blank">
+		<img src={icon} />
 		<h2>
 			{title}
-			<span>&rarr;</span>
 		</h2>
 		<p>
 			{body}
@@ -27,7 +27,7 @@ const { href, title, body } = Astro.props;
 		padding: 1px;
 		background-color: #23262d;
 		background-image: none;
-		background-size: 400%;
+		background-size: 300%;
 		border-radius: 7px;
 		background-position: 100%;
 		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
