@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+import twitter from "../../public/icons8-twitter-48.svg";
 ---
 
 <Layout title="Ese Monday - Portfolio">
@@ -48,29 +49,32 @@ import Card from "../components/Card.astro";
 	main {
 		margin: auto;
 		padding: 1rem;
-		max-width: calc(100% - 2rem);
+		max-width: 1560px;
 		font-size: 20px;
+		display: flex;
+		justify-content: space-between;
 		line-height: 1.6;
 		padding: 2rem;
+		margin: auto;
 	}
 	.hero-section {
 		display: flex;
 		gap: 2rem;
 	}
 	.intro-section {
-		width: 40%;
 		display: flex;
+		width: 40%;
 		flex-direction: column;
 		position: sticky;
 		justify-content: center;
-		padding: 2rem 0;
+		padding: 2rem;
 	}
 	.intro-title {
-		font-size: 36px;
+		font-size: 4rem;
 		font-weight: 600;
 	}
 	.intro-subtitle {
-		font-size: 16px;
+		font-size: 1.5rem;
 		font-weight: 300;
 	}
 	.profile-picture {
@@ -81,6 +85,7 @@ import Card from "../components/Card.astro";
 	.bento-cards {
 		display: flex;
 		flex-wrap: wrap;
+		width: 50%;
 		gap: 2rem;
 	}
 	@media screen and (max-width: 800px) {
@@ -88,6 +93,10 @@ import Card from "../components/Card.astro";
 			flex-direction: column;
 		}
 		.intro-section {
+			width: 100%;
+			padding: 0;
+		}
+		.bento-cards {
 			width: 100%;
 		}
 	}
