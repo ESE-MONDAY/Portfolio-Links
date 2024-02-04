@@ -1,42 +1,71 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
-import twitter from "../../public/icons8-twitter-48.svg";
-import github from "../../public/icons8-github.svg";
 ---
 
 <Layout title="Ese Monday - Portfolio">
 	<main>
 		<div class="hero-section">
 			<div class="intro-section">
-				<img
-					src="/profile-photo.jpeg"
-					alt="Picture of Ese Monday"
-					class="profile-picture"
-				/>
+				<div class="intro-image">
+					<img
+						src="/profile-photo.jpeg"
+						alt="Picture of Ese Monday"
+						class="profile-picture"
+					/>
+				</div>
+
 				<h1 class="intro-title">Ese Monday</h1>
 				<p class="intro-subtitle">
 					Ese Monday is a Frontend Engineer with extensive knowledge of open
 					source, blockchain, and software products
 				</p>
+				<ul class="intro-list">
+					<li>💻 Frontend Engineer</li>
+					<li>📝 Technical Writing</li>
+					<li>📢 FOSS Advocate</li>
+				</ul>
 			</div>
-			<div class="bento-cards">
-				<div class="bento-box">
-					<Card
-						title="Twitter"
-						body="@esemonday1"
-						href="#"
-						icon="/icons8-twitter-48.svg"
-					/>
+			<div class="bento-section">
+				<p class="bento-section-subtitle">Welcome to my space 🎀</p>
+				<div class="bento-cards">
+					<div class="bento-box">
+						<Card
+							title="Twitter"
+							body="@esemonday1"
+							href="https://twitter.com/EseMonday1"
+							icon="/icons8-twitter-48.svg"
+						/>
+					</div>
+					<div class="bento-box">
+						<Card
+							title="Github"
+							body="ESE-MONDAY"
+							href="https://github.com/ESE-MONDAY"
+							icon="/icons8-github.svg"
+						/>
+					</div>
+					<div class="bento-box">
+						<Card
+							title="Linkedin"
+							body="ESE MONDAY"
+							href="https://www.linkedin.com/in/ese-monday/"
+							icon="/icons8-linkedin-48.svg"
+						/>
+					</div>
+					<div class="bento-box">
+						<iframe
+							style="border-radius:12px"
+							src="https://open.spotify.com/embed/album/4hTM8jZ8DCCqglmZUDMSPz?utm_source=generator&theme=0"
+							width="100%"
+							height="152"
+							allowfullscreen=""
+							allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+							loading="lazy"></iframe>
+					</div>
 				</div>
-				<div class="bento-box">
-					<Card
-						title="Github"
-						body="ESE-MONDAY"
-						href="#"
-						icon="/icons8-github-48.svg"
-					/>
-				</div>
+				<p class="bento-section-subtitle">My Pets</p>
+				<div class="bento-cards"></div>
 			</div>
 		</div>
 	</main>
@@ -61,22 +90,41 @@ import github from "../../public/icons8-github.svg";
 	}
 	.intro-title {
 		font-size: 4rem;
-		font-weight: 700;
+		font-weight: 800;
 	}
 	.intro-subtitle {
 		font-size: 1.5rem;
-		font-weight: 500;
+		font-weight: 600;
 	}
+	.intro-list {
+		padding: 0;
+		list-style-type: none;
+	}
+	.intro-list li {
+		margin: 0.5rem;
+		font-size: 1.25rem;
+		font-weight: 600;
+	}
+
 	.profile-picture {
 		height: 150px;
 		width: 150px;
 		border-radius: 100%;
 	}
-	.bento-cards {
+	.bento-section {
 		width: 50%;
+		gap: 3rem;
+	}
+	.bento-section-subtitle {
+		margin-bottom: 1rem;
+		font-size: 1.25rem;
+		font-weight: 700;
+	}
+	.bento-cards {
+		width: 100%;
 		display: grid;
 		gap: 2rem;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(4, 1fr);
 	}
 	.bento-box {
 		text-align: center;
@@ -95,16 +143,8 @@ import github from "../../public/icons8-github.svg";
 		grid-row: span 1;
 	}
 	.bento-box:nth-child(4) {
-		grid-column: span 1;
-		grid-row: span 1;
-	}
-	.bento-box:nth-child(5) {
-		grid-column: span 1;
+		grid-column: span 4;
 		grid-row: span 2;
-	}
-	.bento-box:nth-child(6) {
-		grid-column: span 1;
-		grid-row: span 3;
 	}
 
 	@media screen and (max-width: 800px) {
@@ -115,22 +155,35 @@ import github from "../../public/icons8-github.svg";
 			width: 100%;
 			padding: 0;
 		}
+
 		.intro-title {
 			font-size: 2rem;
 		}
 		.intro-subtitle {
 			font-size: 1rem;
 		}
+		.intro-list li,
+		.bento-section-subtitle {
+			font-size: 0.8rem;
+		}
+		.bento-section {
+			width: 100%;
+		}
 		.bento-cards {
 			width: 100%;
+			gap: 1rem;
 		}
 		.bento-box:nth-child(1) {
 			grid-column: span 2;
-			grid-row: span 2;
+			grid-row: span 1;
 		}
 		.bento-box:nth-child(2) {
 			grid-column: span 2;
-			grid-row: span 2;
+			grid-row: span 1;
+		}
+		.bento-box:nth-child(3) {
+			grid-column: span 2;
+			grid-row: span 1;
 		}
 	}
 </style>
